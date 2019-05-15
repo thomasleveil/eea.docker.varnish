@@ -1,9 +1,9 @@
-FROM debian:jessie
+FROM debian:stretch
 MAINTAINER "EEA: IDM2 A-Team" <eea-edw-a-team-alerts@googlegroups.com>
 
 COPY src/docker-install.sh /tmp/docker-install.sh
 RUN /tmp/docker-install.sh \
- && rm -rvf /tmp/*
+  && rm -rvf /tmp/*
 
 COPY src/*.py src/track* src/*.sh  /
 COPY src/reload                    /usr/bin/reload
